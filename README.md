@@ -1,9 +1,11 @@
 # CS-489-APPSD
 
-Maven-based Java CLI solutions for:
+Maven-based Java CLI solutions and submission assets for:
 
+- Lab 1: Product Management app
 - Lab 2A: Employee Pension Plans app
 - Lab 2B: Patient Appointment Management System (PAMS)
+- Lab 3: Software Requirements Discovery and Domain Modeling for Advantis Dental Surgeries (ADS)
 
 Java version: 25
 
@@ -35,6 +37,20 @@ The Lab 2B app writes its JSON output to:
 
 ```text
 outputs/lab2b/patients-by-age.json
+```
+
+## Run Lab 3
+
+```bash
+java -cp target/classes edu.miu.cs.cs489appsd.lab3.adsapp.ADSApp
+```
+
+The Lab 3 submission assets are committed under:
+
+```text
+outputs/lab3/ads-functional-requirements.md
+outputs/lab3/ads-domain-model.svg
+outputs/lab3/ads-domain-model.png
 ```
 
 ## CI/CD
