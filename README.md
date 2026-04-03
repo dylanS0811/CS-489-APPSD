@@ -6,6 +6,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 2A: Employee Pension Plans app
 - Lab 2B: Patient Appointment Management System (PAMS)
 - Lab 3: Software Requirements Discovery and Domain Modeling for Advantis Dental Surgeries (ADS)
+- Lab 4: Software Solution Architecture for Advantis Dental Surgeries (ADS)
 
 Java version: 25
 
@@ -51,6 +52,16 @@ The Lab 3 submission assets are committed under:
 outputs/lab3/ads-functional-requirements.md
 outputs/lab3/ads-domain-model.svg
 outputs/lab3/ads-domain-model.png
+```
+
+## Lab 4 Deliverables
+
+The Lab 4 architecture deliverables are committed under:
+
+```text
+outputs/lab4/ads-architecture-tech-stack.md
+outputs/lab4/ads-solution-architecture.svg
+outputs/lab4/ads-solution-architecture.png
 ```
 
 ## CI/CD

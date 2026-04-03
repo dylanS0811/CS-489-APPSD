@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #17324d; }
+      .subtitle { font: 16px Arial, sans-serif; fill: #486581; }
+      .tier-label { font: 700 20px Arial, sans-serif; fill: #102a43; }
+      .box-title { font: 700 18px Arial, sans-serif; fill: #17324d; }
+      .box-text { font: 15px Arial, sans-serif; fill: #243b53; }
+      .small { font: 14px Arial, sans-serif; fill: #486581; }
+      .tier-box { fill: none; stroke: #8aa4bf; stroke-width: 2; stroke-dasharray: 8 6; rx: 12; ry: 12; }
+      .panel { fill: #f8fbff; stroke: #35608a; stroke-width: 2; rx: 12; ry: 12; }
+      .panel-alt { fill: #eef6ff; stroke: #35608a; stroke-width: 2; rx: 12; ry: 12; }
+      .header { fill: #dbeafe; stroke: #35608a; stroke-width: 2; }
+      .divider { stroke: #35608a; stroke-width: 1.5; }
+      .arrow { stroke: #4b647d; stroke-width: 2.6; fill: none; marker-end: url(#arrow); }
+      .label { font: 14px Arial, sans-serif; fill: #334e68; }
+      .note { fill: #fff7db; stroke: #d4a72c; stroke-width: 2; rx: 10; ry: 10; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#4b647d"/>
+    </marker>
+  </defs>
+
+  <text class="title" x="800" y="38" text-anchor="middle">ADS Software Solution Architecture</text>
+  <text class="subtitle" x="800" y="66" text-anchor="middle">Chosen style: Layered Modular Monolith | Tech stack: Angular + Spring Boot + PostgreSQL + SMTP</text>
+
+  <text class="tier-label" x="140" y="104" text-anchor="middle">Physical Tiers</text>
+  <text class="tier-label" x="930" y="104" text-anchor="middle">Logical Tiers and Layers</text>
+
+  <rect class="tier-box" x="40" y="130" width="200" height="245"/>
+  <text class="box-title" x="140" y="164" text-anchor="middle">Client Tier</text>
+  <rect class="panel-alt" x="72" y="190" width="136" height="70"/>
+  <text class="box-title" x="140" y="220" text-anchor="middle">Browser</text>
+  <text class="box-text" x="140" y="245" text-anchor="middle">Angular SPA</text>
+  <text class="small" x="140" y="292" text-anchor="middle">Office Manager | Dentist</text>
+  <text class="small" x="140" y="312" text-anchor="middle">Patient</text>
+
+  <rect class="tier-box" x="40" y="405" width="200" height="355"/>
+  <text class="box-title" x="140" y="439" text-anchor="middle">Middle Tier</text>
+  <rect class="panel-alt" x="72" y="478" width="136" height="180"/>
+  <text class="box-title" x="140" y="514" text-anchor="middle">Application</text>
+  <text class="box-title" x="140" y="538" text-anchor="middle">Server</text>
+  <text class="box-text" x="140" y="572" text-anchor="middle">Spring Boot</text>
+  <text class="box-text" x="140" y="596" text-anchor="middle">REST API</text>
+  <text class="box-text" x="140" y="620" text-anchor="middle">Business Services</text>
+  <text class="box-text" x="140" y="644" text-anchor="middle">Persistence</text>
+
+  <rect class="tier-box" x="40" y="820" width="200" height="205"/>
+  <text class="box-title" x="140" y="854" text-anchor="middle">Data / Integration Tier</text>
+  <rect class="panel-alt" x="60" y="892" width="75" height="72"/>
+  <rect class="panel-alt" x="145" y="892" width="75" height="72"/>
+  <text class="box-text" x="97" y="926" text-anchor="middle">PostgreSQL</text>
+  <text class="box-text" x="182" y="926" text-anchor="middle">SMTP</text>
+  <text class="small" x="140" y="982" text-anchor="middle">Persistent data and email</text>
+  <text class="small" x="140" y="1000" text-anchor="middle">integration</text>
+
+  <rect class="panel" x="280" y="130" width="1280" height="930"/>
+
+  <rect class="panel-alt" x="330" y="170" width="320" height="180"/>
+  <rect class="header" x="330" y="170" width="320" height="42"/>
+  <line class="divider" x1="330" y1="212" x2="650" y2="212"/>
+  <text class="box-title" x="490" y="197" text-anchor="middle">Client Application</text>
+  <text class="box-text" x="490" y="246" text-anchor="middle">Angular Single-Page Application</text>
+  <text class="box-text" x="490" y="274" text-anchor="middle">TypeScript, HTML, CSS, Bootstrap</text>
+  <text class="box-text" x="490" y="302" text-anchor="middle">Office Manager, Dentist, Patient portals</text>
+
+  <rect class="panel" x="760" y="150" width="720" height="670"/>
+  <text class="box-title" x="1120" y="184" text-anchor="middle">Application Server / Layered Backend</text>
+
+  <rect class="panel-alt" x="820" y="205" width="560" height="60"/>
+  <text class="box-title" x="1100" y="238" text-anchor="middle">Security and Access Control</text>
+  <text class="box-text" x="1100" y="260" text-anchor="middle">Spring Security, authentication, role-based authorization</text>
+
+  <rect class="panel-alt" x="820" y="290" width="560" height="95"/>
+  <text class="box-title" x="1100" y="322" text-anchor="middle">Presentation / API Layer</text>
+  <text class="box-text" x="1100" y="350" text-anchor="middle">Spring Boot REST API, Spring MVC Controllers, DTO mapping, validation</text>
+
+  <rect class="panel-alt" x="820" y="415" width="560" height="300"/>
+  <text class="box-title" x="1100" y="448" text-anchor="middle">Business Service Layer</text>
+
+  <rect class="panel" x="850" y="470" width="220" height="72"/>
+  <rect class="panel" x="1090" y="470" width="220" height="72"/>
+  <rect class="panel" x="850" y="560" width="220" height="72"/>
+  <rect class="panel" x="1090" y="560" width="220" height="72"/>
+  <rect class="panel" x="950" y="646" width="260" height="64"/>
+
+  <text class="box-title" x="960" y="500" text-anchor="middle">Patient</text>
+  <text class="small" x="960" y="522" text-anchor="middle">Management Service</text>
+
+  <text class="box-title" x="1200" y="500" text-anchor="middle">Dentist</text>
+  <text class="small" x="1200" y="522" text-anchor="middle">Management Service</text>
+
+  <text class="box-title" x="960" y="590" text-anchor="middle">Appointment</text>
+  <text class="small" x="960" y="612" text-anchor="middle">Scheduling Service</text>
+
+  <text class="box-title" x="1200" y="590" text-anchor="middle">Billing and</text>
+  <text class="small" x="1200" y="612" text-anchor="middle">Outstanding Balance Service</text>
+
+  <text class="box-title" x="1080" y="675" text-anchor="middle">Notification /</text>
+  <text class="small" x="1080" y="697" text-anchor="middle">Email Service</text>
+
+  <rect class="panel-alt" x="820" y="744" width="560" height="62"/>
+  <text class="box-title" x="1100" y="770" text-anchor="middle">Persistence Layer</text>
+  <text class="box-text" x="1100" y="794" text-anchor="middle">Spring Data JPA Repositories and Transaction Management</text>
+
+  <rect class="panel" x="1140" y="824" width="190" height="40"/>
+  <text class="box-text" x="1235" y="849" text-anchor="middle">Hibernate ORM</text>
+
+  <rect class="panel-alt" x="760" y="884" width="720" height="136"/>
+  <text class="box-title" x="1120" y="918" text-anchor="middle">Data and External Services</text>
+
+  <rect class="panel" x="820" y="948" width="220" height="52"/>
+  <rect class="panel" x="1080" y="948" width="220" height="52"/>
+
+  <text class="box-title" x="930" y="978" text-anchor="middle">PostgreSQL Database</text>
+  <text class="box-title" x="1190" y="978" text-anchor="middle">SMTP Email Gateway</text>
+
+  <rect class="note" x="330" y="390" width="320" height="112"/>
+  <text class="box-title" x="490" y="426" text-anchor="middle">Architecture Choice</text>
+  <text class="box-text" x="490" y="454" text-anchor="middle">3-tier web architecture</text>
+  <text class="box-text" x="490" y="480" text-anchor="middle">Layered modular monolith</text>
+
+  <line class="arrow" x1="650" y1="260" x2="820" y2="338"/>
+  <text class="label" x="706" y="226">HTTPS / JSON</text>
+
+  <line class="arrow" x1="930" y1="806" x2="930" y2="948"/>
+  <text class="label" x="946" y="882">JPA / SQL</text>
+
+  <polyline class="arrow" points="1210,678 1420,678 1420,920 1190,920 1190,948"/>
+  <text class="label" x="1310" y="658">SMTP</text>
+
+  <line class="arrow" x1="208" y1="225" x2="330" y2="225"/>
+  <line class="arrow" x1="208" y1="570" x2="760" y2="570"/>
+  <line class="arrow" x1="220" y1="928" x2="760" y2="928"/>
+</svg>

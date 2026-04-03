@@ -1,175 +1,190 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
   <defs>
     <style>
-      .title { font: 700 24px Arial, sans-serif; fill: #17324d; }
-      .class-name { font: 700 18px Arial, sans-serif; fill: #17324d; }
-      .attr { font: 15px Arial, sans-serif; fill: #1f2933; }
-      .label { font: 14px Arial, sans-serif; fill: #334e68; }
+      .title { font: 700 26px Arial, sans-serif; fill: #17324d; }
+      .class-title { font: 700 18px Arial, sans-serif; fill: #17324d; }
+      .attr { font: 15px Arial, sans-serif; fill: #243b53; }
+      .label { font: 14px Arial, sans-serif; fill: #486581; }
       .mult { font: 13px Arial, sans-serif; fill: #102a43; }
-      .note-text { font: 14px Arial, sans-serif; fill: #5c3d00; }
-      .box { fill: #f8fbff; stroke: #1f4e79; stroke-width: 2; rx: 10; ry: 10; }
-      .header { fill: #d9ecff; stroke: #1f4e79; stroke-width: 2; }
-      .divider { stroke: #1f4e79; stroke-width: 1.5; }
-      .assoc { stroke: #556b85; stroke-width: 2.2; fill: none; }
-      .note { fill: #fff4cf; stroke: #b58105; stroke-width: 2; rx: 10; ry: 10; }
-      .dash { stroke-dasharray: 8 6; }
+      .note-title { font: 700 14px Arial, sans-serif; fill: #8d5b00; }
+      .note-text { font: 14px Arial, sans-serif; fill: #8d5b00; }
+      .class-fill { fill: #f8fbff; }
+      .class-stroke { fill: none; stroke: #35608a; stroke-width: 2; }
+      .header-fill { fill: #dbeafe; }
+      .divider { stroke: #35608a; stroke-width: 1.5; }
+      .assoc { fill: none; stroke: #4b647d; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .inherit { fill: none; stroke: #4b647d; stroke-width: 2.2; stroke-linecap: round; }
+      .triangle { fill: #ffffff; stroke: #35608a; stroke-width: 2; }
+      .note-fill { fill: #fff7db; }
+      .note-stroke { fill: none; stroke: #d4a72c; stroke-width: 2; }
+      .constraint { fill: none; stroke: #7b8794; stroke-width: 2; stroke-dasharray: 7 6; }
     </style>
   </defs>
 
-  <text class="title" x="800" y="34" text-anchor="middle">Advantis Dental Surgeries (ADS) Domain Model</text>
+  <text class="title" x="800" y="38" text-anchor="middle">Advantis Dental Surgeries (ADS) Domain Model</text>
 
-  <g transform="translate(520 50)">
-    <rect class="box" width="560" height="140"/>
-    <rect class="header" width="560" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="560" y2="38"/>
-    <text class="class-name" x="280" y="25" text-anchor="middle">Person</text>
-    <text class="attr" x="18" y="64">- firstName : String</text>
-    <text class="attr" x="18" y="90">- lastName : String</text>
+  <g transform="translate(520 60)">
+    <rect class="class-fill" width="560" height="140" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H548 Q560,0 560,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="560" height="140" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="560" y2="40"/>
+    <text class="class-title" x="280" y="26" text-anchor="middle">Person</text>
+    <text class="attr" x="18" y="68">- firstName : String</text>
+    <text class="attr" x="18" y="92">- lastName : String</text>
     <text class="attr" x="18" y="116">- phoneNumber : String</text>
-    <text class="attr" x="290" y="64">- email : String</text>
+    <text class="attr" x="18" y="136">- email : String</text>
   </g>
 
-  <g transform="translate(140 250)">
-    <rect class="box" width="260" height="120"/>
-    <rect class="header" width="260" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="260" y2="38"/>
-    <text class="class-name" x="130" y="25" text-anchor="middle">OfficeManager</text>
-    <text class="attr" x="16" y="68">- officeManagerId : long</text>
+  <g transform="translate(110 250)">
+    <rect class="class-fill" width="300" height="118" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H288 Q300,0 300,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="300" height="118" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="300" y2="40"/>
+    <text class="class-title" x="150" y="26" text-anchor="middle">OfficeManager</text>
+    <text class="attr" x="18" y="72">- officeManagerId : long</text>
   </g>
 
-  <g transform="translate(550 250)">
-    <rect class="box" width="270" height="130"/>
-    <rect class="header" width="270" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="270" y2="38"/>
-    <text class="class-name" x="135" y="25" text-anchor="middle">Dentist</text>
-    <text class="attr" x="16" y="68">- dentistId : long</text>
-    <text class="attr" x="16" y="94">- specialization : String</text>
+  <g transform="translate(520 250)">
+    <rect class="class-fill" width="280" height="130" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H268 Q280,0 280,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="280" height="130" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="280" y2="40"/>
+    <text class="class-title" x="140" y="26" text-anchor="middle">Dentist</text>
+    <text class="attr" x="18" y="72">- dentistId : long</text>
+    <text class="attr" x="18" y="98">- specialization : String</text>
   </g>
 
-  <g transform="translate(950 250)">
-    <rect class="box" width="290" height="145"/>
-    <rect class="header" width="290" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="290" y2="38"/>
-    <text class="class-name" x="145" y="25" text-anchor="middle">Patient</text>
-    <text class="attr" x="16" y="66">- patientId : long</text>
-    <text class="attr" x="16" y="92">- mailingAddress : String</text>
-    <text class="attr" x="16" y="118">- dateOfBirth : LocalDate</text>
+  <g transform="translate(980 250)">
+    <rect class="class-fill" width="310" height="145" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H298 Q310,0 310,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="310" height="145" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="310" y2="40"/>
+    <text class="class-title" x="155" y="26" text-anchor="middle">Patient</text>
+    <text class="attr" x="18" y="72">- patientId : long</text>
+    <text class="attr" x="18" y="98">- mailingAddress : String</text>
+    <text class="attr" x="18" y="124">- dateOfBirth : LocalDate</text>
   </g>
 
-  <g transform="translate(130 500)">
-    <rect class="box" width="320" height="175"/>
-    <rect class="header" width="320" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="320" y2="38"/>
-    <text class="class-name" x="160" y="25" text-anchor="middle">AppointmentRequest</text>
-    <text class="attr" x="16" y="64">- requestId : long</text>
-    <text class="attr" x="16" y="88">- requestChannel : RequestChannel</text>
-    <text class="attr" x="16" y="112">- requestType : RequestType</text>
-    <text class="attr" x="16" y="136">- preferredDateTime : LocalDateTime</text>
-    <text class="attr" x="16" y="160">- status : RequestStatus</text>
+  <g transform="translate(90 500)">
+    <rect class="class-fill" width="360" height="178" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H348 Q360,0 360,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="360" height="178" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="360" y2="40"/>
+    <text class="class-title" x="180" y="26" text-anchor="middle">AppointmentRequest</text>
+    <text class="attr" x="18" y="72">- requestId : long</text>
+    <text class="attr" x="18" y="98">- requestChannel : RequestChannel</text>
+    <text class="attr" x="18" y="124">- requestType : RequestType</text>
+    <text class="attr" x="18" y="150">- preferredDateTime : LocalDateTime</text>
+    <text class="attr" x="18" y="170">- status : RequestStatus</text>
   </g>
 
-  <g transform="translate(550 500)">
-    <rect class="box" width="340" height="155"/>
-    <rect class="header" width="340" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="340" y2="38"/>
-    <text class="class-name" x="170" y="25" text-anchor="middle">Appointment</text>
-    <text class="attr" x="16" y="64">- appointmentId : long</text>
-    <text class="attr" x="16" y="88">- appointmentDateTime : LocalDateTime</text>
-    <text class="attr" x="16" y="112">- status : AppointmentStatus</text>
-    <text class="attr" x="16" y="136">- confirmationEmailSent : boolean</text>
+  <g transform="translate(520 500)">
+    <rect class="class-fill" width="360" height="160" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H348 Q360,0 360,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="360" height="160" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="360" y2="40"/>
+    <text class="class-title" x="180" y="26" text-anchor="middle">Appointment</text>
+    <text class="attr" x="18" y="72">- appointmentId : long</text>
+    <text class="attr" x="18" y="98">- appointmentDateTime : LocalDateTime</text>
+    <text class="attr" x="18" y="124">- status : AppointmentStatus</text>
+    <text class="attr" x="18" y="146">- confirmationEmailSent : boolean</text>
   </g>
 
   <g transform="translate(1010 500)">
-    <rect class="box" width="300" height="135"/>
-    <rect class="header" width="300" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="300" y2="38"/>
-    <text class="class-name" x="150" y="25" text-anchor="middle">Surgery</text>
-    <text class="attr" x="16" y="64">- surgeryId : long</text>
-    <text class="attr" x="16" y="88">- name : String</text>
-    <text class="attr" x="16" y="112">- locationAddress : String</text>
-    <text class="attr" x="16" y="136">- telephoneNumber : String</text>
+    <rect class="class-fill" width="320" height="138" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H308 Q320,0 320,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="320" height="138" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="320" y2="40"/>
+    <text class="class-title" x="160" y="26" text-anchor="middle">Surgery</text>
+    <text class="attr" x="18" y="68">- surgeryId : long</text>
+    <text class="attr" x="18" y="92">- name : String</text>
+    <text class="attr" x="18" y="116">- locationAddress : String</text>
+    <text class="attr" x="18" y="132">- telephoneNumber : String</text>
   </g>
 
-  <g transform="translate(1020 745)">
-    <rect class="box" width="320" height="175"/>
-    <rect class="header" width="320" height="38"/>
-    <line class="divider" x1="0" y1="38" x2="320" y2="38"/>
-    <text class="class-name" x="160" y="25" text-anchor="middle">DentalServiceBill</text>
-    <text class="attr" x="16" y="64">- billId : long</text>
-    <text class="attr" x="16" y="88">- issueDate : LocalDate</text>
-    <text class="attr" x="16" y="112">- amount : BigDecimal</text>
-    <text class="attr" x="16" y="136">- status : BillStatus</text>
-    <text class="attr" x="16" y="160">- description : String</text>
+  <g transform="translate(1020 760)">
+    <rect class="class-fill" width="340" height="170" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H328 Q340,0 340,12 V40 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="class-stroke" width="340" height="170" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="40" x2="340" y2="40"/>
+    <text class="class-title" x="170" y="26" text-anchor="middle">DentalServiceBill</text>
+    <text class="attr" x="18" y="72">- billId : long</text>
+    <text class="attr" x="18" y="98">- issueDate : LocalDate</text>
+    <text class="attr" x="18" y="124">- amount : BigDecimal</text>
+    <text class="attr" x="18" y="150">- status : BillStatus</text>
+    <text class="attr" x="18" y="166">- description : String</text>
   </g>
 
-  <g transform="translate(120 760)">
-    <rect class="note" width="360" height="100"/>
-    <text class="note-text" x="20" y="32">Constraint:</text>
-    <text class="note-text" x="20" y="58">A patient with an outstanding unpaid</text>
-    <text class="note-text" x="20" y="82">bill cannot request a new appointment.</text>
+  <g transform="translate(90 770)">
+    <rect class="note-fill" width="390" height="100" rx="12" ry="12"/>
+    <rect class="note-stroke" width="390" height="100" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="28">Constraint:</text>
+    <text class="note-text" x="18" y="56">A patient with an outstanding unpaid</text>
+    <text class="note-text" x="18" y="80">bill cannot request a new appointment.</text>
   </g>
 
-  <g transform="translate(540 760)">
-    <rect class="note" width="380" height="100"/>
-    <text class="note-text" x="20" y="32">Constraint:</text>
-    <text class="note-text" x="20" y="58">A dentist cannot be assigned more than</text>
-    <text class="note-text" x="20" y="82">5 appointments in any given week.</text>
+  <g transform="translate(520 770)">
+    <rect class="note-fill" width="420" height="100" rx="12" ry="12"/>
+    <rect class="note-stroke" width="420" height="100" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="28">Constraint:</text>
+    <text class="note-text" x="18" y="56">A dentist cannot be assigned more than</text>
+    <text class="note-text" x="18" y="80">5 appointments in any given week.</text>
   </g>
 
-  <line class="assoc" x1="270" y1="250" x2="650" y2="190"/>
-  <polygon points="650,190 636,196 642,182" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+  <line class="inherit" x1="260" y1="250" x2="700" y2="200"/>
+  <polygon class="triangle" points="700,200 686,207 693,192"/>
 
-  <line class="assoc" x1="685" y1="250" x2="800" y2="190"/>
-  <polygon points="800,190 786,196 792,182" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+  <line class="inherit" x1="660" y1="250" x2="800" y2="200"/>
+  <polygon class="triangle" points="800,200 786,207 793,192"/>
 
-  <line class="assoc" x1="1095" y1="250" x2="950" y2="190"/>
-  <polygon points="950,190 964,196 958,182" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+  <line class="inherit" x1="1135" y1="250" x2="950" y2="200"/>
+  <polygon class="triangle" points="950,200 964,207 957,192"/>
 
-  <line class="assoc" x1="290" y1="500" x2="290" y2="395"/>
-  <text class="label" x="302" y="448">processes</text>
-  <text class="mult" x="266" y="484">0..*</text>
-  <text class="mult" x="252" y="412">0..1</text>
+  <line class="assoc" x1="260" y1="368" x2="260" y2="500"/>
+  <text class="label" x="278" y="438">processes</text>
+  <text class="mult" x="240" y="388">1</text>
+  <text class="mult" x="240" y="488">0..*</text>
 
-  <line class="assoc" x1="400" y1="334" x2="550" y2="550"/>
-  <text class="label" x="435" y="430">books</text>
-  <text class="mult" x="392" y="352">1</text>
-  <text class="mult" x="528" y="540">0..*</text>
+  <polyline class="assoc" points="410,309 460,309 460,560 520,560"/>
+  <text class="label" x="428" y="438">books</text>
+  <text class="mult" x="418" y="300">1</text>
+  <text class="mult" x="488" y="552">0..*</text>
 
-  <line class="assoc" x1="950" y1="335" x2="890" y2="575"/>
-  <text class="label" x="905" y="440">has</text>
-  <text class="mult" x="930" y="356">1</text>
-  <text class="mult" x="900" y="558">0..*</text>
+  <line class="assoc" x1="660" y1="380" x2="660" y2="500"/>
+  <text class="label" x="678" y="438">treats</text>
+  <text class="mult" x="642" y="398">1</text>
+  <text class="mult" x="642" y="488">0..*</text>
 
-  <polyline class="assoc" points="450,520 500,520 500,450 920,450 920,360 950,360"/>
-  <text class="label" x="690" y="432">submittedBy</text>
-  <text class="mult" x="430" y="512">0..*</text>
-  <text class="mult" x="924" y="350">1</text>
+  <polyline class="assoc" points="1030,395 940,395 940,545 880,545"/>
+  <text class="label" x="952" y="452">has</text>
+  <text class="mult" x="1008" y="388">1</text>
+  <text class="mult" x="900" y="538">0..*</text>
 
-  <line class="assoc" x1="820" y1="565" x2="1010" y2="565"/>
-  <text class="label" x="887" y="548">scheduledAt</text>
-  <text class="mult" x="836" y="558">0..*</text>
-  <text class="mult" x="982" y="558">1</text>
+  <polyline class="assoc" points="450,560 490,560 490,430 950,430 950,320 980,320"/>
+  <text class="label" x="690" y="410">submittedBy</text>
+  <text class="mult" x="456" y="552">0..*</text>
+  <text class="mult" x="958" y="314">1</text>
 
-  <line class="assoc" x1="685" y1="380" x2="720" y2="500"/>
-  <text class="label" x="728" y="435">treats</text>
-  <text class="mult" x="664" y="394">1</text>
-  <text class="mult" x="726" y="488">0..*</text>
+  <line class="assoc" x1="450" y1="610" x2="520" y2="610"/>
+  <text class="label" x="460" y="592">resultsIn</text>
+  <text class="mult" x="456" y="626">0..*</text>
+  <text class="mult" x="500" y="626">0..1</text>
 
-  <line class="assoc" x1="450" y1="575" x2="550" y2="575"/>
-  <text class="label" x="468" y="556">resultsIn</text>
-  <text class="mult" x="460" y="568">0..*</text>
-  <text class="mult" x="526" y="568">0..1</text>
+  <line class="assoc" x1="880" y1="582" x2="1010" y2="582"/>
+  <text class="label" x="926" y="564">scheduledAt</text>
+  <text class="mult" x="888" y="600">0..*</text>
+  <text class="mult" x="994" y="600">1</text>
 
-  <polyline class="assoc" points="720,655 720,720 1020,720 1020,780"/>
-  <text class="label" x="824" y="701">generates</text>
-  <text class="mult" x="696" y="648">0..1</text>
-  <text class="mult" x="996" y="770">0..1</text>
+  <polyline class="assoc" points="700,660 700,720 1040,720 1040,760"/>
+  <text class="label" x="846" y="702">generates</text>
+  <text class="mult" x="708" y="676">0..1</text>
+  <text class="mult" x="1048" y="754">0..1</text>
 
-  <polyline class="assoc" points="1240,325 1400,325 1400,820 1340,820"/>
-  <text class="label" x="1320" y="306">owes</text>
-  <text class="mult" x="1218" y="316">1</text>
-  <text class="mult" x="1350" y="804">0..*</text>
+  <polyline class="assoc" points="1290,330 1450,330 1450,845 1360,845"/>
+  <text class="label" x="1330" y="312">owes</text>
+  <text class="mult" x="1298" y="322">1</text>
+  <text class="mult" x="1368" y="838">0..*</text>
 
-  <line class="assoc dash" x1="300" y1="760" x2="300" y2="655"/>
-  <line class="assoc dash" x1="730" y1="760" x2="730" y2="655"/>
+  <line class="constraint" x1="270" y1="678" x2="270" y2="770"/>
+  <line class="constraint" x1="700" y1="660" x2="700" y2="770"/>
 </svg>
