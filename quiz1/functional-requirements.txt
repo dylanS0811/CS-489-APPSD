@@ -1,0 +1,14 @@
+Quiz 1 - Contacts CLI Functional Requirements
+
+1. The system should store contacts with a unique contact ID, first name, last name, company, and job title.
+2. The system should allow each contact to have zero or more phone numbers.
+3. The system should record each phone number together with a user-defined label.
+4. The system should allow each contact to have zero or more email addresses.
+5. The system should record each email address together with a user-defined label.
+6. The system should allow the user to search contacts by name, company, job title, phone number, or email address.
+7. The system should allow the user to add a new contact to the contact directory.
+8. The system should allow the user to update an existing contact and its associated phone numbers and email addresses.
+9. The system should allow the user to delete an existing contact from the contact directory.
+10. The system should allow the user to merge duplicate contacts into a single consolidated contact.
+11. The system should preserve all distinct phone numbers when duplicate contacts are merged.
+12. The system should preserve all distinct email addresses when duplicate contacts are merged.

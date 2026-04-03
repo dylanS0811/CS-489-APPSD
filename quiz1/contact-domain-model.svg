@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #17324d; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #627d98; }
+      .class-title { font: 700 20px Arial, sans-serif; fill: #17324d; }
+      .field { font: 15px Arial, sans-serif; fill: #243b53; }
+      .method { font: 15px Arial, sans-serif; fill: #243b53; }
+      .label { font: 14px Arial, sans-serif; fill: #486581; }
+      .mult { font: 13px Arial, sans-serif; fill: #102a43; }
+      .text-bg { fill: #ffffff; }
+      .note-title { font: 700 14px Arial, sans-serif; fill: #8d5b00; }
+      .note-text { font: 14px Arial, sans-serif; fill: #8d5b00; }
+      .box-fill { fill: #f8fbff; }
+      .box-stroke { fill: none; stroke: #35608a; stroke-width: 2; }
+      .header-fill { fill: #dbeafe; }
+      .divider { stroke: #35608a; stroke-width: 1.5; }
+      .assoc { fill: none; stroke: #4b647d; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+      .diamond-open { fill: #ffffff; stroke: #35608a; stroke-width: 2; }
+      .diamond-solid { fill: #35608a; stroke: #35608a; stroke-width: 2; }
+      .note-fill { fill: #fff7db; }
+      .note-stroke { fill: none; stroke: #d4a72c; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <text class="title" x="800" y="40" text-anchor="middle">Quiz 1 Contact Management Domain Model</text>
+  <text class="subtitle" x="800" y="68" text-anchor="middle">Contacts CLI application with searchable contacts, labeled phone numbers, labeled email addresses, and duplicate-contact merge support</text>
+
+  <g transform="translate(520 120)">
+    <rect class="box-fill" width="560" height="286" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H548 Q560,0 560,12 V44 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="560" height="286" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="44" x2="560" y2="44"/>
+    <line class="divider" x1="0" y1="108" x2="560" y2="108"/>
+    <text class="class-title" x="280" y="28" text-anchor="middle">ContactDirectory</text>
+
+    <text class="field" x="18" y="74">- contacts : List&lt;Contact&gt;</text>
+
+    <text class="method" x="18" y="138">+ addContact(contact : Contact) : void</text>
+    <text class="method" x="18" y="166">+ updateContact(contact : Contact) : boolean</text>
+    <text class="method" x="18" y="194">+ deleteContact(contactId : long) : boolean</text>
+    <text class="method" x="18" y="222">+ searchContacts(keyword : String) : List&lt;Contact&gt;</text>
+    <text class="method" x="18" y="250">+ mergeContacts(primaryId : long, duplicateId : long) : Contact</text>
+    <text class="method" x="18" y="278">+ getContactsSortedByLastName() : List&lt;Contact&gt;</text>
+  </g>
+
+  <g transform="translate(610 500)">
+    <rect class="box-fill" width="380" height="258" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H368 Q380,0 380,12 V44 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="380" height="258" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="44" x2="380" y2="44"/>
+    <text class="class-title" x="190" y="28" text-anchor="middle">Contact</text>
+    <text class="field" x="18" y="74">- contactId : long</text>
+    <text class="field" x="18" y="102">- firstName : String</text>
+    <text class="field" x="18" y="130">- lastName : String</text>
+    <text class="field" x="18" y="158">- company : String</text>
+    <text class="field" x="18" y="186">- jobTitle : String</text>
+    <text class="field" x="18" y="214">- phoneNumbers : List&lt;PhoneNumber&gt;</text>
+    <text class="field" x="18" y="242">- emailAddresses : List&lt;EmailAddress&gt;</text>
+  </g>
+
+  <g transform="translate(120 548)">
+    <rect class="box-fill" width="300" height="156" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H288 Q300,0 300,12 V44 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="300" height="156" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="44" x2="300" y2="44"/>
+    <text class="class-title" x="150" y="28" text-anchor="middle">PhoneNumber</text>
+    <text class="field" x="18" y="78">- number : String</text>
+    <text class="field" x="18" y="106">- label : String</text>
+  </g>
+
+  <g transform="translate(1160 548)">
+    <rect class="box-fill" width="320" height="156" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H308 Q320,0 320,12 V44 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="320" height="156" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="44" x2="320" y2="44"/>
+    <text class="class-title" x="160" y="28" text-anchor="middle">EmailAddress</text>
+    <text class="field" x="18" y="78">- address : String</text>
+    <text class="field" x="18" y="106">- label : String</text>
+  </g>
+
+  <g transform="translate(170 760)">
+    <rect class="note-fill" width="430" height="110" rx="12" ry="12"/>
+    <rect class="note-stroke" width="430" height="110" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="30">Constraint / Business Rule:</text>
+    <text class="note-text" x="18" y="60">Each contact may own zero or more phone numbers</text>
+    <text class="note-text" x="18" y="86">and zero or more email addresses.</text>
+  </g>
+
+  <g transform="translate(860 760)">
+    <rect class="note-fill" width="500" height="110" rx="12" ry="12"/>
+    <rect class="note-stroke" width="500" height="110" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="30">Constraint / Business Rule:</text>
+    <text class="note-text" x="18" y="60">Duplicate contacts can be merged into one</text>
+    <text class="note-text" x="18" y="86">consolidated record without losing distinct contact details.</text>
+  </g>
+
+  <line class="assoc" x1="800" y1="426" x2="800" y2="500"/>
+  <polygon class="diamond-open" points="800,426 786,440 800,454 814,440"/>
+  <rect class="text-bg" x="820" y="430" width="52" height="22" rx="4" ry="4"/>
+  <text class="label" x="826" y="446">stores</text>
+  <rect class="text-bg" x="760" y="430" width="18" height="18" rx="4" ry="4"/>
+  <text class="mult" x="766" y="444">1</text>
+  <rect class="text-bg" x="724" y="466" width="36" height="18" rx="4" ry="4"/>
+  <text class="mult" x="730" y="480">0..*</text>
+
+  <line class="assoc" x1="420" y1="626" x2="582" y2="626"/>
+  <polygon class="diamond-solid" points="610,626 596,612 582,626 596,640"/>
+  <rect class="text-bg" x="482" y="580" width="62" height="22" rx="4" ry="4"/>
+  <text class="label" x="490" y="596">contains</text>
+  <rect class="text-bg" x="430" y="598" width="36" height="18" rx="4" ry="4"/>
+  <text class="mult" x="436" y="612">0..*</text>
+  <rect class="text-bg" x="558" y="598" width="18" height="18" rx="4" ry="4"/>
+  <text class="mult" x="564" y="612">1</text>
+
+  <line class="assoc" x1="1018" y1="626" x2="1160" y2="626"/>
+  <polygon class="diamond-solid" points="990,626 1004,612 1018,626 1004,640"/>
+  <rect class="text-bg" x="1070" y="580" width="62" height="22" rx="4" ry="4"/>
+  <text class="label" x="1078" y="596">contains</text>
+  <rect class="text-bg" x="948" y="598" width="18" height="18" rx="4" ry="4"/>
+  <text class="mult" x="954" y="612">1</text>
+  <rect class="text-bg" x="1118" y="598" width="36" height="18" rx="4" ry="4"/>
+  <text class="mult" x="1124" y="612">0..*</text>
+</svg>
