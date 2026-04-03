@@ -1,0 +1,6 @@
+dentist_id  last_name  first_name  specialization       phone_number  email                 
+----------  ---------  ----------  -------------------  ------------  ----------------------
+D105        Pearson    Helen       Endodontics          602-555-1205  helen.pearson@ads.com 
+D110        Plevin     Robin       Oral Surgery         602-555-1210  robin.plevin@ads.com  
+D115        Roberts    Amelia      Pediatric Dentistry  602-555-1215  amelia.roberts@ads.com
+D100        Smith      Tony        General Dentistry    602-555-1200  tony.smith@ads.com    

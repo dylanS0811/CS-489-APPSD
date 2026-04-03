@@ -1,0 +1,4 @@
+appointment_id  appointment_date  appointment_time  appointment_status  dentist_id  dentist_name   patient_id  patient_name  patient_phone  patient_email           surgery_id  surgery_name     
+--------------  ----------------  ----------------  ------------------  ----------  -------------  ----------  ------------  -------------  ----------------------  ----------  -----------------
+A1003           2013-09-12        10:00:00          COMPLETED           D105        Helen Pearson  P108        Ian MacKay    602-555-2108   ian.mackay@example.com  S10         ADS Tempe Surgery
+A1004           2013-09-14        14:00:00          BOOKED              D105        Helen Pearson  P108        Ian MacKay    602-555-2108   ian.mackay@example.com  S10         ADS Tempe Surgery

@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1280" viewBox="0 0 1800 1280">
+  <defs>
+    <style>
+      .title { font: 700 28px Arial, sans-serif; fill: #17324d; }
+      .subtitle { font: 15px Arial, sans-serif; fill: #627d98; }
+      .entity-title { font: 700 19px Arial, sans-serif; fill: #17324d; }
+      .field { font: 15px Arial, sans-serif; fill: #243b53; }
+      .pk { font: 700 15px Arial, sans-serif; fill: #9c4221; }
+      .fk { font: 700 15px Arial, sans-serif; fill: #1d4ed8; }
+      .rel { stroke: #4b647d; stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .mult { font: 13px Arial, sans-serif; fill: #102a43; }
+      .note-title { font: 700 14px Arial, sans-serif; fill: #8d5b00; }
+      .note-text { font: 14px Arial, sans-serif; fill: #8d5b00; }
+      .box-fill { fill: #f8fbff; }
+      .box-stroke { fill: none; stroke: #35608a; stroke-width: 2; }
+      .header-fill { fill: #dbeafe; }
+      .divider { stroke: #35608a; stroke-width: 1.4; }
+      .note-fill { fill: #fff7db; }
+      .note-stroke { fill: none; stroke: #d4a72c; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <text class="title" x="900" y="40" text-anchor="middle">ADS Relational E-R Model</text>
+  <text class="subtitle" x="900" y="68" text-anchor="middle">Lab 5A relational database design for Advantis Dental Surgeries (ADS)</text>
+
+  <g transform="translate(670 90)">
+    <rect class="box-fill" width="460" height="174" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H448 Q460,0 460,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="460" height="174" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="460" y2="42"/>
+    <text class="entity-title" x="230" y="27" text-anchor="middle">OFFICE_MANAGER</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> office_manager_id</text>
+    <text class="field" x="18" y="100">first_name</text>
+    <text class="field" x="18" y="128">last_name</text>
+    <text class="field" x="18" y="156">phone_number</text>
+    <text class="field" x="240" y="72">email</text>
+  </g>
+
+  <g transform="translate(90 330)">
+    <rect class="box-fill" width="410" height="228" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H398 Q410,0 410,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="410" height="228" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="410" y2="42"/>
+    <text class="entity-title" x="205" y="27" text-anchor="middle">DENTIST</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> dentist_id</text>
+    <text class="field" x="18" y="100"><tspan class="fk">FK</tspan> office_manager_id</text>
+    <text class="field" x="18" y="128">first_name</text>
+    <text class="field" x="18" y="156">last_name</text>
+    <text class="field" x="18" y="184">phone_number</text>
+    <text class="field" x="18" y="212">email</text>
+    <text class="field" x="220" y="72">specialization</text>
+  </g>
+
+  <g transform="translate(650 350)">
+    <rect class="box-fill" width="500" height="242" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H488 Q500,0 500,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="500" height="242" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="500" y2="42"/>
+    <text class="entity-title" x="250" y="27" text-anchor="middle">APPOINTMENT_REQUEST</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> request_id</text>
+    <text class="field" x="18" y="100"><tspan class="fk">FK</tspan> patient_id</text>
+    <text class="field" x="18" y="128"><tspan class="fk">FK</tspan> office_manager_id</text>
+    <text class="field" x="18" y="156">request_channel</text>
+    <text class="field" x="18" y="184">request_type</text>
+    <text class="field" x="18" y="212">preferred_date</text>
+    <text class="field" x="260" y="72">preferred_time</text>
+    <text class="field" x="260" y="100">status</text>
+    <text class="field" x="260" y="128">requested_at</text>
+  </g>
+
+  <g transform="translate(1280 330)">
+    <rect class="box-fill" width="430" height="256" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H418 Q430,0 430,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="430" height="256" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="430" y2="42"/>
+    <text class="entity-title" x="215" y="27" text-anchor="middle">PATIENT</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> patient_id</text>
+    <text class="field" x="18" y="100"><tspan class="fk">FK</tspan> office_manager_id</text>
+    <text class="field" x="18" y="128">first_name</text>
+    <text class="field" x="18" y="156">last_name</text>
+    <text class="field" x="18" y="184">phone_number</text>
+    <text class="field" x="18" y="212">email</text>
+    <text class="field" x="18" y="240">mailing_address</text>
+    <text class="field" x="250" y="72">date_of_birth</text>
+  </g>
+
+  <g transform="translate(90 730)">
+    <rect class="box-fill" width="400" height="172" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H388 Q400,0 400,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="400" height="172" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="400" y2="42"/>
+    <text class="entity-title" x="200" y="27" text-anchor="middle">SURGERY</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> surgery_id</text>
+    <text class="field" x="18" y="100">name</text>
+    <text class="field" x="18" y="128">location_address</text>
+    <text class="field" x="18" y="156">telephone_number</text>
+  </g>
+
+  <g transform="translate(640 720)">
+    <rect class="box-fill" width="520" height="300" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H508 Q520,0 520,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="520" height="300" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="520" y2="42"/>
+    <text class="entity-title" x="260" y="27" text-anchor="middle">APPOINTMENT</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> appointment_id</text>
+    <text class="field" x="18" y="100"><tspan class="fk">FK</tspan> request_id</text>
+    <text class="field" x="18" y="128"><tspan class="fk">FK</tspan> patient_id</text>
+    <text class="field" x="18" y="156"><tspan class="fk">FK</tspan> dentist_id</text>
+    <text class="field" x="18" y="184"><tspan class="fk">FK</tspan> surgery_id</text>
+    <text class="field" x="18" y="212"><tspan class="fk">FK</tspan> booked_by_office_manager_id</text>
+    <text class="field" x="280" y="72">appointment_date</text>
+    <text class="field" x="280" y="100">appointment_time</text>
+    <text class="field" x="280" y="128">status</text>
+    <text class="field" x="280" y="156">confirmation_email_sent</text>
+  </g>
+
+  <g transform="translate(1280 760)">
+    <rect class="box-fill" width="440" height="214" rx="12" ry="12"/>
+    <path class="header-fill" d="M12,0 H428 Q440,0 440,12 V42 H0 V12 Q0,0 12,0 Z"/>
+    <rect class="box-stroke" width="440" height="214" rx="12" ry="12"/>
+    <line class="divider" x1="0" y1="42" x2="440" y2="42"/>
+    <text class="entity-title" x="220" y="27" text-anchor="middle">DENTAL_SERVICE_BILL</text>
+    <text class="field" x="18" y="72"><tspan class="pk">PK</tspan> bill_id</text>
+    <text class="field" x="18" y="100"><tspan class="fk">FK</tspan> patient_id</text>
+    <text class="field" x="18" y="128"><tspan class="fk">FK</tspan> appointment_id</text>
+    <text class="field" x="18" y="156">issue_date</text>
+    <text class="field" x="250" y="72">amount</text>
+    <text class="field" x="250" y="100">status</text>
+    <text class="field" x="250" y="128">description</text>
+  </g>
+
+  <polyline class="rel" points="670,178 560,178 560,372 500,372"/>
+  <text class="mult" x="642" y="166">1</text>
+  <text class="mult" x="512" y="364">0..*</text>
+
+  <line class="rel" x1="900" y1="264" x2="900" y2="350"/>
+  <text class="mult" x="882" y="282">1</text>
+  <text class="mult" x="882" y="340">0..*</text>
+
+  <polyline class="rel" points="1130,178 1240,178 1240,372 1280,372"/>
+  <text class="mult" x="1140" y="166">1</text>
+  <text class="mult" x="1248" y="364">0..*</text>
+
+  <polyline class="rel" points="1150,470 1210,470 1210,820 1160,820"/>
+  <text class="mult" x="1160" y="458">0..*</text>
+  <text class="mult" x="1170" y="812">0..1</text>
+
+  <line class="rel" x1="1490" y1="586" x2="1490" y2="760"/>
+  <text class="mult" x="1500" y="610">1</text>
+  <text class="mult" x="1500" y="748">0..*</text>
+
+  <polyline class="rel" points="500,444 560,444 560,840 640,840"/>
+  <text class="mult" x="512" y="432">1</text>
+  <text class="mult" x="602" y="832">0..*</text>
+
+  <polyline class="rel" points="500,800 580,800 580,880 640,880"/>
+  <text class="mult" x="510" y="788">1</text>
+  <text class="mult" x="602" y="872">0..*</text>
+
+  <line class="rel" x1="900" y1="592" x2="900" y2="720"/>
+  <text class="mult" x="882" y="610">0..1</text>
+  <text class="mult" x="882" y="710">0..1</text>
+
+  <polyline class="rel" points="1280,470 1210,470 1210,840 1160,840"/>
+  <text class="mult" x="1260" y="458">1</text>
+  <text class="mult" x="1170" y="852">0..*</text>
+
+  <line class="rel" x1="1290" y1="820" x2="1160" y2="820"/>
+  <text class="mult" x="1270" y="808">1</text>
+  <text class="mult" x="1180" y="808">0..*</text>
+
+  <line class="rel" x1="1280" y1="870" x2="1160" y2="870"/>
+  <text class="mult" x="1262" y="858">1</text>
+  <text class="mult" x="1180" y="858">0..*</text>
+
+  <g transform="translate(110 1060)">
+    <rect class="note-fill" width="720" height="120" rx="12" ry="12"/>
+    <rect class="note-stroke" width="720" height="120" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="28">Implemented Business Rules:</text>
+    <text class="note-text" x="18" y="58">1. A dentist cannot be assigned more than 5 appointments in any given week.</text>
+    <text class="note-text" x="18" y="86">2. A patient with an outstanding unpaid bill cannot submit a new appointment request.</text>
+  </g>
+
+  <g transform="translate(980 1060)">
+    <rect class="note-fill" width="660" height="120" rx="12" ry="12"/>
+    <rect class="note-stroke" width="660" height="120" rx="12" ry="12"/>
+    <text class="note-title" x="18" y="28">Legend:</text>
+    <text class="note-text" x="18" y="58"><tspan class="pk">PK</tspan> denotes the primary key column for each table.</text>
+    <text class="note-text" x="18" y="86"><tspan class="fk">FK</tspan> denotes a foreign key reference to another entity/table.</text>
+  </g>
+</svg>

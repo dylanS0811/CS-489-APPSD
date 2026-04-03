@@ -1,0 +1,8 @@
+appointment_id  appointment_date  appointment_time  surgery_id  surgery_name         location_address                 dentist_name   patient_name 
+--------------  ----------------  ----------------  ----------  -------------------  -------------------------------  -------------  -------------
+A1003           2013-09-12        10:00:00          S10         ADS Tempe Surgery    105 Oak Center, Tempe, AZ        Helen Pearson  Ian MacKay   
+A1001           2013-09-12        10:00:00          S15         ADS Phoenix Surgery  501 Camelback Road, Phoenix, AZ  Tony Smith     Gillian White
+A1002           2013-09-12        12:00:00          S15         ADS Phoenix Surgery  501 Camelback Road, Phoenix, AZ  Tony Smith     Jill Bell    
+A1004           2013-09-14        14:00:00          S10         ADS Tempe Surgery    105 Oak Center, Tempe, AZ        Helen Pearson  Ian MacKay   
+A1005           2013-09-14        16:30:00          S15         ADS Phoenix Surgery  501 Camelback Road, Phoenix, AZ  Robin Plevin   Jill Bell    
+A1006           2013-09-15        18:00:00          S13         ADS Mesa Surgery     22 Horizon Drive, Mesa, AZ       Robin Plevin   John Walker  

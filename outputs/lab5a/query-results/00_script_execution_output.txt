@@ -1,0 +1,13 @@
+D105|Pearson|Helen|Endodontics|602-555-1205|helen.pearson@ads.com
+D110|Plevin|Robin|Oral Surgery|602-555-1210|robin.plevin@ads.com
+D115|Roberts|Amelia|Pediatric Dentistry|602-555-1215|amelia.roberts@ads.com
+D100|Smith|Tony|General Dentistry|602-555-1200|tony.smith@ads.com
+A1003|2013-09-12|10:00:00|COMPLETED|D105|Helen Pearson|P108|Ian MacKay|602-555-2108|ian.mackay@example.com|S10|ADS Tempe Surgery
+A1004|2013-09-14|14:00:00|BOOKED|D105|Helen Pearson|P108|Ian MacKay|602-555-2108|ian.mackay@example.com|S10|ADS Tempe Surgery
+A1003|2013-09-12|10:00:00|S10|ADS Tempe Surgery|105 Oak Center, Tempe, AZ|Helen Pearson|Ian MacKay
+A1001|2013-09-12|10:00:00|S15|ADS Phoenix Surgery|501 Camelback Road, Phoenix, AZ|Tony Smith|Gillian White
+A1002|2013-09-12|12:00:00|S15|ADS Phoenix Surgery|501 Camelback Road, Phoenix, AZ|Tony Smith|Jill Bell
+A1004|2013-09-14|14:00:00|S10|ADS Tempe Surgery|105 Oak Center, Tempe, AZ|Helen Pearson|Ian MacKay
+A1005|2013-09-14|16:30:00|S15|ADS Phoenix Surgery|501 Camelback Road, Phoenix, AZ|Robin Plevin|Jill Bell
+A1006|2013-09-15|18:00:00|S13|ADS Mesa Surgery|22 Horizon Drive, Mesa, AZ|Robin Plevin|John Walker
+A1005|2013-09-14|16:30:00|COMPLETED|P105|Jill Bell|D110|Robin Plevin|S15|ADS Phoenix Surgery
