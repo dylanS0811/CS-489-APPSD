@@ -11,6 +11,19 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: 123456
+          MYSQL_DATABASE: cs489_apsd_lab6_test_db
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -p123456 --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
 
     steps:
       - name: Check out repository
@@ -20,10 +33,14 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '25'
+          java-version: '21'
           cache: maven
 
       - name: Build executable JAR
+        env:
+          LAB6_TEST_DB_URL: jdbc:mysql://127.0.0.1:3306/cs489_apsd_lab6_test_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+          LAB6_TEST_DB_USERNAME: root
+          LAB6_TEST_DB_PASSWORD: 123456
         run: mvn -B clean package
 
       - name: Publish release asset
