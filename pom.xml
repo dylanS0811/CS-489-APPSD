@@ -15,15 +15,19 @@
     <artifactId>cs489-appsd</artifactId>
     <version>1.0.0</version>
     <name>CS-489-APPSD</name>
-    <description>CLI apps and Lab 6 Spring Data JPA solution for CS489 Applied Software Development</description>
+    <description>CS489 Applied Software Development labs including Lab 6 data persistence and Lab 7 REST Web API</description>
 
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <main.class>edu.miu.cs.cs489appsd.lab6.adsapp.Lab6DataPersistenceApplication</main.class>
+        <main.class>edu.miu.cs.cs489appsd.lab7.adswebapi.Lab7RestApiApplication</main.class>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -40,6 +44,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

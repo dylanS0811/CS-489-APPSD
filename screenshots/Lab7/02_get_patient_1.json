@@ -1,0 +1,16 @@
+{
+  "patientId": 1,
+  "patientNumber": "P100",
+  "firstName": "Gillian",
+  "lastName": "White",
+  "phoneNumber": "641-451-3000",
+  "email": "gillian.white@example.com",
+  "dateOfBirth": "1989-04-12",
+  "primaryAddress": {
+    "addressId": 4,
+    "street": "100 Maple St",
+    "city": "Fairfield",
+    "state": "IA",
+    "zipCode": "52556"
+  }
+}

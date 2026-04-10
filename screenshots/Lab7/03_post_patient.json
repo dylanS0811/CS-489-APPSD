@@ -1,0 +1,16 @@
+{
+  "patientId": 5,
+  "patientNumber": "P130",
+  "firstName": "Maria",
+  "lastName": "Anderson",
+  "phoneNumber": "641-451-3130",
+  "email": "maria.anderson@example.com",
+  "dateOfBirth": "1992-08-14",
+  "primaryAddress": {
+    "addressId": 8,
+    "street": "130 Elm St",
+    "city": "Ottumwa",
+    "state": "IA",
+    "zipCode": "52501"
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "addressId": 5,
+    "street": "105 Cedar Ave",
+    "city": "Fairfield",
+    "state": "IA",
+    "zipCode": "52556",
+    "patient": {
+      "patientId": 2,
+      "patientNumber": "P105",
+      "firstName": "Jill",
+      "lastName": "Bell",
+      "phoneNumber": "641-451-3005",
+      "email": "jill.bell@example.com",
+      "dateOfBirth": "1991-07-21"
+    }
+  },
+  {
+    "addressId": 6,
+    "street": "108 Birch Ln",
+    "city": "Fairfield",
+    "state": "IA",
+    "zipCode": "52556",
+    "patient": {
+      "patientId": 3,
+      "patientNumber": "P108",
+      "firstName": "Ian",
+      "lastName": "MacKay",
+      "phoneNumber": "641-451-3008",
+      "email": "ian.mackay@example.com",
+      "dateOfBirth": "1987-11-03"
+    }
+  },
+  {
+    "addressId": 7,
+    "street": "110 Walnut Dr",
+    "city": "Fairfield",
+    "state": "IA",
+    "zipCode": "52556",
+    "patient": {
+      "patientId": 4,
+      "patientNumber": "P110",
+      "firstName": "John",
+      "lastName": "Walker",
+      "phoneNumber": "641-451-3010",
+      "email": "john.walker@example.com",
+      "dateOfBirth": "1994-02-09"
+    }
+  },
+  {
+    "addressId": 4,
+    "street": "100 Maple St",
+    "city": "Fairfield",
+    "state": "IA",
+    "zipCode": "52556",
+    "patient": {
+      "patientId": 1,
+      "patientNumber": "P100",
+      "firstName": "Gillian",
+      "lastName": "White",
+      "phoneNumber": "641-451-3000",
+      "email": "gillian.white@example.com",
+      "dateOfBirth": "1989-04-12"
+    }
+  },
+  {
+    "addressId": 8,
+    "street": "130 Updated Elm St",
+    "city": "Ottumwa",
+    "state": "IA",
+    "zipCode": "52501",
+    "patient": {
+      "patientId": 5,
+      "patientNumber": "P130",
+      "firstName": "Maria",
+      "lastName": "Anders",
+      "phoneNumber": "641-451-3131",
+      "email": "maria.anders@example.com",
+      "dateOfBirth": "1992-08-14"
+    }
+  }
+]

@@ -14,14 +14,20 @@ import edu.miu.cs.cs489appsd.lab6.adsapp.repository.PatientRepository;
 import edu.miu.cs.cs489appsd.lab6.adsapp.repository.RoleRepository;
 import edu.miu.cs.cs489appsd.lab6.adsapp.repository.SurgeryRepository;
 import edu.miu.cs.cs489appsd.lab6.adsapp.repository.UserRepository;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 @Service
 @Transactional
@@ -37,19 +43,25 @@ public class ClinicManagementService {
     private final AppointmentRepository appointmentRepository;
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+    private final JdbcTemplate jdbcTemplate;
+    private final DataSource dataSource;
 
     public ClinicManagementService(PatientRepository patientRepository,
                                    DentistRepository dentistRepository,
                                    SurgeryRepository surgeryRepository,
                                    AppointmentRepository appointmentRepository,
                                    UserRepository userRepository,
-                                   RoleRepository roleRepository) {
+                                   RoleRepository roleRepository,
+                                   JdbcTemplate jdbcTemplate,
+                                   DataSource dataSource) {
         this.patientRepository = patientRepository;
         this.dentistRepository = dentistRepository;
         this.surgeryRepository = surgeryRepository;
         this.appointmentRepository = appointmentRepository;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.jdbcTemplate = jdbcTemplate;
+        this.dataSource = dataSource;
     }
 
     public void seedSampleData() {
@@ -184,6 +196,8 @@ public class ClinicManagementService {
 
         roleRepository.deleteAll();
         roleRepository.flush();
+
+        resetIdentityColumns();
     }
 
     public List<String> runCrudShowcase() {
@@ -275,5 +289,35 @@ public class ClinicManagementService {
                 appointment.getAppointmentTime().format(TIME_FORMATTER),
                 appointment.getSurgery().getSurgeryNumber()
         );
+    }
+
+    private void resetIdentityColumns() {
+        try (Connection connection = dataSource.getConnection()) {
+            String databaseName = connection.getMetaData()
+                    .getDatabaseProductName()
+                    .toLowerCase(Locale.ROOT);
+
+            if (databaseName.contains("mysql")) {
+                List.of("appointments", "users", "patients", "surgeries", "dentists", "roles", "addresses")
+                        .forEach(table -> jdbcTemplate.execute("ALTER TABLE " + table + " AUTO_INCREMENT = 1"));
+                return;
+            }
+
+            if (databaseName.contains("h2")) {
+                Map<String, String> identityColumns = Map.of(
+                        "appointments", "appointment_id",
+                        "users", "user_id",
+                        "patients", "patient_id",
+                        "surgeries", "surgery_id",
+                        "dentists", "dentist_id",
+                        "roles", "role_id",
+                        "addresses", "address_id"
+                );
+                identityColumns.forEach((table, column) ->
+                        jdbcTemplate.execute("ALTER TABLE " + table + " ALTER COLUMN " + column + " RESTART WITH 1"));
+            }
+        } catch (SQLException exception) {
+            throw new IllegalStateException("Failed to reset identity columns while seeding sample data", exception);
+        }
     }
 }
