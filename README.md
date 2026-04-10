@@ -8,6 +8,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 3: Software Requirements Discovery and Domain Modeling for Advantis Dental Surgeries (ADS)
 - Lab 4: Software Solution Architecture for Advantis Dental Surgeries (ADS)
 - Lab 6: Data Persistence for Advantis Dental Surgeries (ADS)
+- Lab 7: RESTful Web API for Advantis Dental Surgeries (ADS)
 
 Java version: 21+
 
@@ -86,21 +87,7 @@ src/main/java/edu/miu/cs/cs489appsd/lab6/adsapp/service/
 src/main/resources/application.properties
 ```
 
-## Run Lab 6
-
-Build the project:
-
-```bash
-mvn clean package
-```
-
-Run the Lab 6 executable JAR:
-
-```bash
-java -jar target/cs489-appsd.jar
-```
-
-Before running the JAR, make sure a local MySQL server is running and accepting connections on port `3306`.
+The Lab 6 persistence layer is reused by Lab 7. The default Spring Boot startup path now launches the Lab 7 Web API.
 
 ## Test Lab 6
 
@@ -110,12 +97,7 @@ Run the automated test that verifies the Spring Boot application context loads c
 mvn test
 ```
 
-You can also verify the packaged application directly:
-
-```bash
-mvn -DskipTests package
-java -jar target/cs489-appsd.jar
-```
+The packaged JAR now starts Lab 7 by default. The Lab 6 persistence code remains in the `lab6/adsapp` package and is reused by the Lab 7 Web API.
 
 ## Verify Lab 6 Results
 
@@ -139,9 +121,9 @@ Robin Plevin       P105   Jill Bell       14-Sep-13   16.30   S15
 Robin Plevin       P110   John Walker     15-Sep-13   18.00   S13
 ```
 
-## MySQL Configuration For Lab 6
+## Database Configuration
 
-Lab 6 now uses a real local MySQL server for both runtime and test execution. H2 has been removed from the project.
+The runtime application uses a real local MySQL server. The automated test profile uses in-memory H2 so the integration tests can run without changing local MySQL data.
 
 Default runtime settings in [src/main/resources/application.properties](/Users/hainingsong/IdeaProjects/CS-489-APPSD/src/main/resources/application.properties):
 
@@ -187,13 +169,98 @@ The MySQL runtime configuration is stored in:
 src/main/resources/application.properties
 ```
 
-The MySQL test-profile configuration is stored in:
+The automated test-profile configuration is stored in:
 
 ```text
 src/test/resources/application-test.properties
 ```
 
-The Lab 6 sample data is cleared and reseeded on each application run so the console output stays consistent while using a real MySQL database.
+The sample data is cleared and reseeded on each application run so the API output stays consistent while using a real MySQL database.
+
+## Lab 7 Overview
+
+Lab 7 implements a RESTful Web API for the ADS dental clinic using Spring Boot Web, Spring Data JPA, validation, and exception handling.
+
+Main Lab 7 source files:
+
+```text
+src/main/java/edu/miu/cs/cs489appsd/lab7/adswebapi/
+src/test/java/edu/miu/cs/cs489appsd/lab7/adswebapi/
+```
+
+Key Lab 7 components:
+
+- Spring Boot startup and data initialization for the Web API
+- REST controllers for patient and address resources
+- Request and response DTOs for JSON payloads
+- Global exception handling for invalid IDs, validation errors, not-found cases, and data-integrity violations
+- Integration tests covering the required endpoints
+
+## Run Lab 7
+
+Build the project:
+
+```bash
+mvn clean package
+```
+
+Run the Lab 7 Web API with Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+Or run the packaged JAR:
+
+```bash
+java -jar target/cs489-appsd.jar
+```
+
+Before starting the app, make sure a local MySQL server is running and accepting connections on port `3306`.
+
+After startup, the API is available at:
+
+```text
+http://localhost:8080/adsweb/api/v1
+```
+
+Required Lab 7 endpoints:
+
+- `GET /adsweb/api/v1/patients`
+- `GET /adsweb/api/v1/patients/{patientId}`
+- `POST /adsweb/api/v1/patients`
+- `PUT /adsweb/api/v1/patients/{patientId}`
+- `DELETE /adsweb/api/v1/patient/{patientId}`
+- `GET /adsweb/api/v1/patient/search/{searchString}`
+- `GET /adsweb/api/v1/addresses`
+
+## Test Lab 7
+
+Run all automated tests, including the Lab 7 integration tests:
+
+```bash
+mvn test
+```
+
+The Lab 7 integration tests are located in:
+
+```text
+src/test/java/edu/miu/cs/cs489appsd/lab7/adswebapi/Lab7RestApiIntegrationTests.java
+```
+
+## Lab 7 Submission Assets
+
+The generated Lab 7 API output files and screenshot-ready previews are committed under:
+
+```text
+screenshots/Lab7/
+```
+
+That folder includes:
+
+- JSON output for `GET`, `POST`, `PUT`, `SEARCH`, and `GET /addresses`
+- Text output for the `DELETE` response status
+- PNG previews for each captured output file
 
 ## CI/CD
 
