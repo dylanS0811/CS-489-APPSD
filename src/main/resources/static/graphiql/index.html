@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADS GraphiQL</title>
+    <link rel="stylesheet" href="/graphiql/assets/graphiql.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        #graphiql {
+            height: 100vh;
+        }
+
+        .load-error {
+            box-sizing: border-box;
+            color: #b00020;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 24px;
+        }
+    </style>
+</head>
+<body>
+<div id="graphiql">Loading...</div>
+
+<script src="/graphiql/assets/react.production.min.js"></script>
+<script src="/graphiql/assets/react-dom.production.min.js"></script>
+<script src="/graphiql/assets/graphiql.min.js"></script>
+<script>
+    const rootElement = document.getElementById("graphiql");
+
+    window.addEventListener("error", function (event) {
+        rootElement.innerHTML = '<div class="load-error">GraphiQL failed to load: '
+                + event.message + '</div>';
+    });
+
+    try {
+        const params = new URLSearchParams(window.location.search);
+        const path = params.get("path") || "/graphql";
+        const url = `${window.location.protocol}//${window.location.host}${path}`;
+        const fetcher = GraphiQL.createFetcher({ url: url });
+        const defaultQuery = `query {\n  allPatients {\n    patientId\n    patientNumber\n    firstName\n    lastName\n    primaryAddress {\n      city\n      state\n    }\n  }\n}`;
+
+        ReactDOM.render(
+            React.createElement(GraphiQL, {
+                fetcher: fetcher,
+                defaultQuery: defaultQuery,
+                defaultVariableEditorOpen: true,
+                headerEditorEnabled: true,
+                shouldPersistHeaders: true
+            }),
+            rootElement
+        );
+    } catch (error) {
+        rootElement.innerHTML = '<div class="load-error">GraphiQL failed to initialize: '
+                + error.message + '</div>';
+    }
+</script>
+</body>
+</html>

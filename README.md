@@ -9,6 +9,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 4: Software Solution Architecture for Advantis Dental Surgeries (ADS)
 - Lab 6: Data Persistence for Advantis Dental Surgeries (ADS)
 - Lab 7: RESTful Web API for Advantis Dental Surgeries (ADS)
+- Lab 7b: GraphQL Web API for Advantis Dental Surgeries (ADS)
 
 Java version: 21+
 
@@ -87,7 +88,7 @@ src/main/java/edu/miu/cs/cs489appsd/lab6/adsapp/service/
 src/main/resources/application.properties
 ```
 
-The Lab 6 persistence layer is reused by Lab 7. The default Spring Boot startup path now launches the Lab 7 Web API.
+The Lab 6 persistence layer is reused by Lab 7 and Lab 7b. The default Spring Boot startup path now launches the Lab 7b GraphQL Web API.
 
 ## Test Lab 6
 
@@ -97,7 +98,7 @@ Run the automated test that verifies the Spring Boot application context loads c
 mvn test
 ```
 
-The packaged JAR now starts Lab 7 by default. The Lab 6 persistence code remains in the `lab6/adsapp` package and is reused by the Lab 7 Web API.
+The packaged JAR now starts Lab 7b by default. The Lab 6 persistence code remains in the `lab6/adsapp` package and is reused by both the Lab 7 REST API and the Lab 7b GraphQL API.
 
 ## Verify Lab 6 Results
 
@@ -204,16 +205,10 @@ Build the project:
 mvn clean package
 ```
 
-Run the Lab 7 Web API with Maven:
+Run the Lab 7 REST Web API with Maven:
 
 ```bash
-mvn spring-boot:run
-```
-
-Or run the packaged JAR:
-
-```bash
-java -jar target/cs489-appsd.jar
+mvn -Dspring-boot.run.main-class=edu.miu.cs.cs489appsd.lab7.adswebapi.Lab7RestApiApplication spring-boot:run
 ```
 
 Before starting the app, make sure a local MySQL server is running and accepting connections on port `3306`.
@@ -261,6 +256,89 @@ That folder includes:
 - JSON output for `GET`, `POST`, `PUT`, `SEARCH`, and `GET /addresses`
 - Text output for the `DELETE` response status
 - PNG previews for each captured output file
+
+## Lab 7b Overview
+
+Lab 7b implements GraphQL Web API endpoints for the ADS dental clinic using Spring for GraphQL, Spring Web MVC, Spring Data JPA, and the Lab 6 and Lab 7 shared backend services.
+
+Main Lab 7b source files:
+
+```text
+src/main/java/edu/miu/cs/cs489appsd/lab7b/adsgraphqlapi/
+src/main/resources/graphql/ads_lab7b_schema.graphqls
+src/test/java/edu/miu/cs/cs489appsd/lab7b/adsgraphqlapi/
+```
+
+Key Lab 7b components:
+
+- A dedicated Spring Boot startup class for the GraphQL app
+- GraphQL query and mutation mappings for patient and address operations
+- GraphQL schema definitions under `src/main/resources/graphql/`
+- Reuse of the Lab 6 persistence layer and Lab 7 DTO and service layer mappings
+- Integration tests that validate the required GraphQL operations
+
+## Run Lab 7b
+
+Run the Lab 7b GraphQL Web API with Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+Or run the packaged JAR:
+
+```bash
+java -jar target/cs489-appsd.jar
+```
+
+After startup, use:
+
+```text
+http://localhost:8080/graphiql
+```
+
+The GraphQL endpoint is available at:
+
+```text
+http://localhost:8080/graphql
+```
+
+Implemented Lab 7b operations:
+
+- `query allPatients`
+- `query patientById(patientId: ID!)`
+- `query searchPatients(searchString: String!)`
+- `query allAddresses`
+- `mutation addNewPatient(newPatient: NewPatientInput!)`
+- `mutation updatePatient(patientId: ID!, editedPatient: NewPatientInput!)`
+- `mutation deletePatient(patientId: ID!)`
+
+## Test Lab 7b
+
+Run all automated tests, including the Lab 7b GraphQL integration tests:
+
+```bash
+mvn test
+```
+
+The Lab 7b integration tests are located in:
+
+```text
+src/test/java/edu/miu/cs/cs489appsd/lab7b/adsgraphqlapi/Lab7bGraphqlWebApiIntegrationTests.java
+```
+
+## Lab 7b Submission Assets
+
+The GraphiQL screenshot checklist and final screenshots belong under:
+
+```text
+screenshots/Lab7b/
+```
+
+That folder includes:
+
+- `screenshot-checklist.md` with the exact query and mutation list
+- The final GraphiQL PNG screenshots for submission
 
 ## CI/CD
 
