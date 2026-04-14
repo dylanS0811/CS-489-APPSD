@@ -15,12 +15,12 @@
     <artifactId>cs489-appsd</artifactId>
     <version>1.0.0</version>
     <name>CS-489-APPSD</name>
-    <description>CS489 Applied Software Development labs including Lab 6 data persistence, Lab 7 REST Web API, and Lab 7b GraphQL Web API</description>
+    <description>CS489 Applied Software Development labs including Lab 6 data persistence, Lab 7 REST Web API, Lab 7b GraphQL Web API, and Lab 9 application security</description>
 
     <properties>
         <java.version>21</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <main.class>edu.miu.cs.cs489appsd.lab7b.adsgraphqlapi.Lab7bGraphqlWebApiApplication</main.class>
+        <main.class>edu.miu.cs.cs489appsd.lab9.adssecureapi.Lab9SecureWebApiApplication</main.class>
     </properties>
 
     <dependencies>
@@ -38,7 +38,28 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-graphql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.6</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>0.12.6</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>com.mysql</groupId>
@@ -58,6 +79,11 @@
         <dependency>
             <groupId>org.springframework.graphql</groupId>
             <artifactId>spring-graphql-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

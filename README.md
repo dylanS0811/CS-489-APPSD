@@ -10,6 +10,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 6: Data Persistence for Advantis Dental Surgeries (ADS)
 - Lab 7: RESTful Web API for Advantis Dental Surgeries (ADS)
 - Lab 7b: GraphQL Web API for Advantis Dental Surgeries (ADS)
+- Lab 9: Application Security for Advantis Dental Surgeries (ADS)
 
 Java version: 21+
 
@@ -88,7 +89,7 @@ src/main/java/edu/miu/cs/cs489appsd/lab6/adsapp/service/
 src/main/resources/application.properties
 ```
 
-The Lab 6 persistence layer is reused by Lab 7 and Lab 7b. The default Spring Boot startup path now launches the Lab 7b GraphQL Web API.
+The Lab 6 persistence layer is reused by Lab 7, Lab 7b, and Lab 9. The default Spring Boot startup path now launches the Lab 9 secure Web API.
 
 ## Test Lab 6
 
@@ -98,7 +99,7 @@ Run the automated test that verifies the Spring Boot application context loads c
 mvn test
 ```
 
-The packaged JAR now starts Lab 7b by default. The Lab 6 persistence code remains in the `lab6/adsapp` package and is reused by both the Lab 7 REST API and the Lab 7b GraphQL API.
+The packaged JAR now starts Lab 9 by default. The Lab 6 persistence code remains in the `lab6/adsapp` package and is reused by Lab 7, Lab 7b, and Lab 9.
 
 ## Verify Lab 6 Results
 
@@ -282,10 +283,10 @@ Key Lab 7b components:
 Run the Lab 7b GraphQL Web API with Maven:
 
 ```bash
-mvn spring-boot:run
+mvn -Dspring-boot.run.main-class=edu.miu.cs.cs489appsd.lab7b.adsgraphqlapi.Lab7bGraphqlWebApiApplication spring-boot:run
 ```
 
-Or run the packaged JAR:
+The packaged JAR starts Lab 9 by default, not Lab 7b:
 
 ```bash
 java -jar target/cs489-appsd.jar
@@ -339,6 +340,106 @@ That folder includes:
 
 - `screenshot-checklist.md` with the exact query and mutation list
 - The final GraphiQL PNG screenshots for submission
+
+## Lab 9 Overview
+
+Lab 9 implements application security for the ADS Web API using Spring Security and JWT-based authentication with role-based authorization.
+
+Main Lab 9 source files:
+
+```text
+src/main/java/edu/miu/cs/cs489appsd/lab9/adssecureapi/
+src/test/java/edu/miu/cs/cs489appsd/lab9/adssecureapi/
+```
+
+Key Lab 9 components:
+
+- A dedicated Spring Boot startup class for the secure API
+- Token-based authentication using JSON Web Tokens (JWT)
+- Role-based authorization for `OFFICE_MANAGER` and `ADMINISTRATOR`
+- Protected patient and address endpoints reused from Lab 7
+- Secure login and current-user endpoints
+- Integration tests covering authentication and authorization behavior
+
+## Run Lab 9
+
+Build the project:
+
+```bash
+mvn clean package
+```
+
+Run the Lab 9 secure Web API with Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+Or run the packaged JAR:
+
+```bash
+java -jar target/cs489-appsd.jar
+```
+
+After startup, the secure API is available at:
+
+```text
+http://localhost:8080/adsweb/api/v1
+```
+
+Authentication endpoints:
+
+- `POST /adsweb/api/v1/auth/login`
+- `GET /adsweb/api/v1/auth/me`
+
+Protected business endpoints:
+
+- `GET /adsweb/api/v1/patients`
+- `GET /adsweb/api/v1/patients/{patientId}`
+- `POST /adsweb/api/v1/patients`
+- `PUT /adsweb/api/v1/patients/{patientId}`
+- `DELETE /adsweb/api/v1/patient/{patientId}`
+- `GET /adsweb/api/v1/patient/search/{searchString}`
+- `GET /adsweb/api/v1/addresses`
+
+Default seeded accounts:
+
+- `olivia.morgan / welcome1` with role `OFFICE_MANAGER`
+- `ethan.reed / welcome1` with role `ADMINISTRATOR`
+
+Authorization rules:
+
+- `OFFICE_MANAGER` can view patients, search patients, list addresses, and access `/auth/me`
+- `ADMINISTRATOR` can perform all read operations plus create, update, and delete patients
+
+Example login request:
+
+```bash
+curl -X POST http://localhost:8080/adsweb/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"ethan.reed","password":"welcome1"}'
+```
+
+Use the returned `accessToken` as a Bearer token:
+
+```bash
+curl http://localhost:8080/adsweb/api/v1/patients \
+  -H "Authorization: Bearer <your-jwt-token>"
+```
+
+## Test Lab 9
+
+Run all automated tests, including the Lab 9 security integration tests:
+
+```bash
+mvn test
+```
+
+The Lab 9 integration tests are located in:
+
+```text
+src/test/java/edu/miu/cs/cs489appsd/lab9/adssecureapi/Lab9SecureWebApiIntegrationTests.java
+```
 
 ## CI/CD
 

@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -49,6 +50,15 @@ public class AdsWebApiExceptionHandler {
                                                                          HttpServletRequest request) {
         return buildResponse(HttpStatus.CONFLICT,
                 "The request violates a data constraint. Ensure patientNumber and email are unique.",
+                request.getRequestURI(),
+                null);
+    }
+
+    @ExceptionHandler(AuthenticationException.class)
+    public ResponseEntity<ApiErrorResponse> handleAuthenticationException(AuthenticationException exception,
+                                                                          HttpServletRequest request) {
+        return buildResponse(HttpStatus.UNAUTHORIZED,
+                "Invalid username or password",
                 request.getRequestURI(),
                 null);
     }
