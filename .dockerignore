@@ -1,0 +1,12 @@
+.git
+.github
+.idea
+target
+outputs/**/*.sqlite
+screenshots
+*.iml
+.DS_Store
+*.log
+docker-compose*.yml
+k8s
+README.md

@@ -11,6 +11,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 7: RESTful Web API for Advantis Dental Surgeries (ADS)
 - Lab 7b: GraphQL Web API for Advantis Dental Surgeries (ADS)
 - Lab 9: Application Security for Advantis Dental Surgeries (ADS)
+- Lab 10: Docker containerization and Kubernetes deployment for the ADS secure Web API
 
 Java version: 21+
 
@@ -439,6 +440,52 @@ The Lab 9 integration tests are located in:
 
 ```text
 src/test/java/edu/miu/cs/cs489appsd/lab9/adssecureapi/Lab9SecureWebApiIntegrationTests.java
+```
+
+## Lab 10 Overview
+
+Lab 10 containerizes the ADS secure Web API and provides deployment assets for Docker and Kubernetes.
+
+Main Lab 10 files:
+
+```text
+Dockerfile
+docker-compose.yml
+k8s/
+outputs/lab10/README.md
+```
+
+Build the Docker image:
+
+```bash
+docker build -t cs489-appsd:lab10 .
+```
+
+Run the app with MySQL using Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+After startup, the secure API is available at:
+
+```text
+http://localhost:8080/adsweb/api/v1
+```
+
+Deploy to Kubernetes after enabling a local or cloud Kubernetes cluster. For a local Docker-based cluster, `kind` works well:
+
+```bash
+kind create cluster --name cs489-lab10
+kind load docker-image cs489-appsd:lab10 --name cs489-lab10
+kubectl apply -k k8s
+kubectl -n cs489-lab10 port-forward service/cs489-appsd 8080:8080
+```
+
+Detailed Lab 10 build, run, verification, and submission notes are in:
+
+```text
+outputs/lab10/README.md
 ```
 
 ## CI/CD
