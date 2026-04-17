@@ -11,6 +11,10 @@ public interface PatientApiService {
 
     PatientResponse getPatientById(Long patientId);
 
+    default PatientResponse findPatientById(Long patientId) {
+        return getPatientById(patientId);
+    }
+
     PatientResponse createPatient(PatientRequest patientRequest);
 
     PatientResponse updatePatient(Long patientId, PatientRequest patientRequest);

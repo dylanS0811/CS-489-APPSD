@@ -12,6 +12,7 @@ Maven-based Java CLI solutions and submission assets for:
 - Lab 7b: GraphQL Web API for Advantis Dental Surgeries (ADS)
 - Lab 9: Application Security for Advantis Dental Surgeries (ADS)
 - Lab 10: Docker containerization and Kubernetes deployment for the ADS secure Web API
+- Lab 11: Testing with JUnit, Mockito, Spring Boot integration tests, and controller unit tests
 
 Java version: 21+
 
@@ -486,6 +487,33 @@ Detailed Lab 10 build, run, verification, and submission notes are in:
 
 ```text
 outputs/lab10/README.md
+```
+
+## Lab 11 Overview
+
+Lab 11 adds JUnit and Mockito testing for standalone array components and additional Lab 7 Web API test coverage.
+
+Main Lab 11 files:
+
+```text
+src/main/java/edu/miu/cs/cs489appsd/lab11/arrays/
+src/test/java/edu/miu/cs/cs489appsd/lab11/arrays/
+src/test/java/edu/miu/cs/cs489appsd/lab7/adswebapi/PatientApiServiceFindPatientByIdIntegrationTests.java
+src/test/java/edu/miu/cs/cs489appsd/lab7/adswebapi/controller/PatientControllerUnitTests.java
+outputs/lab11/README.md
+```
+
+Implemented Lab 11 test coverage:
+
+- `ArrayFlattener.flattenArray(...)` valid nested array and null input test cases
+- `ArrayReversor.reverseArray(...)` valid nested array and null input test cases using a mocked `ArrayFlattenerService`
+- Lab 7 patient service find-by-id integration tests for found and not-found patients
+- Lab 7 `GET /adsweb/api/v1/patients` controller unit test with a mocked service
+
+Run the Lab 11 tests as part of the full project suite:
+
+```bash
+mvn -q test
 ```
 
 ## CI/CD
